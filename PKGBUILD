@@ -14,13 +14,10 @@ md5sums=( 'SKIP')
 
 build() {
 	cd sampleprog
-	gcc asd.c -o mylovelyprogram
+	gcc asd.c -Wall -Wextra -Wpedantic -Wshadow -O3 -o mylovelyprogram
 }
 
 package() {
 	cd sampleprog
-#if you are facing issue during install ,add comment on line 23 and remove comment from line 24
- install -Dm 755 mylovelyprogram $pkgdir/usr/bin/mylovelyprogram
-#sudo cp mylovelyprogram /usr/bin
+        install -Dm 755 mylovelyprogram $pkgdir/usr/bin/mylovelyprogram
 }
-#type 'mylovelyprogram' in your terminal to run the installled package
